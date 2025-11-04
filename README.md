@@ -1,16 +1,44 @@
-# github_explorer
+# 🧭 iNiLabs GitHub Explorer (Flutter Developer Task)
 
-A new Flutter project.
+A Flutter project built following **Clean Architecture** and **GetX pattern**, demonstrating:
 
-## Getting Started
+- GitHub REST API integration
+- Light/Dark theme switching
+- Grid/List view toggle
+- Sorting & filtering repositories
+- Error handling and clean state management
+- Clean and scalable code architecture
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### ✅ GitHub User Search
+- Fetches user info from:  
+  `https://api.github.com/users/{username}`
+- Displays user profile details on the home screen.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### ✅ Repository Listing
+- Fetches repositories using:  
+  `https://api.github.com/users/{username}/repos`
+- Supports **List view** and **Grid view** toggle.
+- Includes **search**, **sort**, and **filter** options (by name, date, stars, etc.).
+
+### ✅ Repository Details
+- Tap on a repository to view its details such as description, language, stars, forks, and last updated time.
+- Includes a **"View on GitHub"** button that redirects to the repository page.
+
+### ✅ Theming
+- Supports **Light** ☀️ and **Dark** 🌙 themes.
+- Theme state is preserved throughout navigation.
+
+### ✅ Error Handling
+- Gracefully handles API errors and empty states.
+- Shows user-friendly messages and retry options.
+
+---
+
+## 🧱 Architecture
+
+Organized into **Clean Architecture layers** for maintainability and scalability:
+
