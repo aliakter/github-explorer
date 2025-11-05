@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:github_explorer/core/Utils/utils.dart';
 import 'package:github_explorer/domain/entities/repo.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class RepoDetailsPage extends StatelessWidget {
   const RepoDetailsPage({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:github_explorer/app/controllers/theme_controller.dart';
+import 'package:github_explorer/core/theme/app_colors.dart';
 import 'package:github_explorer/core/widgets/custom_loading_in.dart';
 import 'package:github_explorer/presentation/controllers/user_controller.dart';
 
@@ -28,7 +29,7 @@ class LoginPage extends GetView<UserController> {
                   ? const SizedBox.shrink()
                   : Text(
                       controller.error.value!,
-                      style: const TextStyle(color: Colors.red),
+                      style: TextStyle(color: AppColors.error),
                     ),
             ),
             const SizedBox(height: 12),
@@ -41,11 +42,11 @@ class LoginPage extends GetView<UserController> {
                       : controller.fetchUser,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: themeCtrl.isDark.value
-                        ? Colors.white
-                        : Colors.black,
+                        ? AppColors.background
+                        : AppColors.backgroundBlack,
                     foregroundColor: themeCtrl.isDark.value
-                        ? Colors.black
-                        : Colors.white,
+                        ? AppColors.backgroundBlack
+                        : AppColors.background,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -56,15 +57,15 @@ class LoginPage extends GetView<UserController> {
                           height: 24,
                           width: 24,
                           color: themeCtrl.isDark.value
-                              ? Colors.black
-                              : Colors.white,
+                              ? AppColors.backgroundBlack
+                              : AppColors.background,
                         )
                       : Text(
                           'Continue',
                           style: TextStyle(
                             color: themeCtrl.isDark.value
-                                ? Colors.black
-                                : Colors.white,
+                                ? AppColors.backgroundBlack
+                                : AppColors.background,
                           ),
                         ),
                 ),
