@@ -7,7 +7,7 @@ class Assets {
   static const String controllersRepoController = 'lib/presentation/controllers/repo_controller.dart';
   static const String controllersThemeController = 'lib/app/controllers/theme_controller.dart';
   static const String controllersUserController = 'lib/presentation/controllers/user_controller.dart';
-  static const String dataSourcesGithubRemoteDataSource = 'lib/data/data_sources/github_remote_data_source.dart';
+  static const String dataSourcesGithubRemoteDataSource = 'lib/data/data_sources/user_remote_data_source.dart';
   static const String entitiesRepo = 'lib/domain/entities/repo.dart';
   static const String entitiesUser = 'lib/domain/entities/user.dart';
   static const String errorsExceptions = 'lib/core/errors/exceptions.dart';
@@ -20,9 +20,9 @@ class Assets {
   static const String pagesHomePage = 'lib/presentation/pages/home_page.dart';
   static const String pagesLoginPage = 'lib/presentation/pages/login_page.dart';
   static const String pagesRepoDetailsPage = 'lib/presentation/pages/repo_details_page.dart';
-  static const String repositoriesGithubRepository = 'lib/domain/repositories/github_repository.dart';
-  static const String repositoriesGithubRepositoryImpl = 'lib/data/repositories/github_repository_impl.dart';
-  static const String usecasesGetReposUsecase = 'lib/domain/usecases/get_repos_usecase.dart';
+  static const String repositoriesGithubRepository = 'lib/domain/repositories/repo_repository.dart';
+  static const String repositoriesGithubRepositoryImpl = 'lib/data/repositories/user_repository_impl.dart';
+  static const String usecasesGetReposUsecase = 'lib/domain/usecases/get_repo_usecase.dart';
   static const String usecasesGetUserUsecase = 'lib/domain/usecases/get_user_usecase.dart';
   static const String widgetsRepoGridTile = 'lib/presentation/widgets/repo_grid_tile.dart';
   static const String widgetsRepoListTile = 'lib/presentation/widgets/repo_list_tile.dart';

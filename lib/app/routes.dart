@@ -1,7 +1,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:github_explorer/presentation/pages/home_page.dart';
-import 'package:github_explorer/presentation/pages/login_page.dart';
-import 'package:github_explorer/presentation/pages/repo_details_page.dart';
+import 'package:github_explorer/presentation/pages/home/home_page.dart';
+import 'package:github_explorer/presentation/pages/login/login_page.dart';
+import 'package:github_explorer/presentation/pages/repo_details/repo_details_page.dart';
 
 class Routes {
   static const login = '/';

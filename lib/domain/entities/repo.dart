@@ -9,6 +9,15 @@ class Repo {
   final DateTime? updatedAt;
   final String? htmlUrl;
 
-
-  Repo({required this.id, required this.name, this.fullName, this.description, this.language, this.stargazersCount, this.forksCount, this.updatedAt, this.htmlUrl});
+  Repo({
+    required this.id,
+    required this.name,
+    this.fullName,
+    this.description,
+    this.language,
+    this.stargazersCount,
+    this.forksCount,
+    this.updatedAt,
+    this.htmlUrl,
+  });
 }

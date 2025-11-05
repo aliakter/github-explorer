@@ -4,8 +4,8 @@ import 'package:github_explorer/domain/entities/repo.dart';
 
 class RepoListTile extends StatelessWidget {
   final Repo repo;
-  const RepoListTile({super.key, required this.repo});
 
+  const RepoListTile({super.key, required this.repo});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,10 @@ class RepoListTile extends StatelessWidget {
       child: ListTile(
         title: Text(repo.name),
         subtitle: Text(repo.description ?? 'No description'),
-        trailing: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Text('${repo.stargazersCount ?? 0} ★')]),
+        trailing: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Text('${repo.stargazersCount ?? 0} ★')],
+        ),
         onTap: () => Get.toNamed('/details', arguments: repo),
       ),
     );

@@ -1,43 +1,52 @@
 import 'package:get/get.dart';
 import 'package:github_explorer/domain/entities/repo.dart';
-import 'package:github_explorer/domain/repositories/github_repository.dart';
+import 'package:github_explorer/domain/usecases/get_repo_usecase.dart';
 
 enum RepoSort { name, updated, stars }
 
 class RepoController extends GetxController {
-  final GitHubRepository _repo;
+  final GetRepoUseCase getRepoUseCase;
 
-  RepoController(this._repo);
-
+  RepoController(this.getRepoUseCase);
   final repos = <Repo>[].obs;
   final filtered = <Repo>[].obs;
   final isLoading = false.obs;
   final viewIsGrid = false.obs;
   final sortBy = RepoSort.updated.obs;
   final query = ''.obs;
+  final error = ''.obs;
+  String username = '';
 
-  Future<void> load(String username) async {
-    try {
+  void init(String username) {
+    this.username = username;
+    loadRepos();
+  }
+
+  Future<void> loadRepos() async {
       isLoading.value = true;
-      final r = await _repo.getRepos(username);
-      repos.assignAll(r);
-      applyFilters();
-    } catch (e) {
-      Get.snackbar('Error', 'Could not load repositories');
-    } finally {
+      error.value = '';
+      repos.clear();
+      filtered.clear();
+      final result = await getRepoUseCase.getRepo(username);
+      result.fold(
+            (f) => error.value = f.message,
+            (repoList) {
+          repos.assignAll(repoList);
+          applyFilters();
+        },
+      );
       isLoading.value = false;
-    }
   }
 
   void toggleView() => viewIsGrid.value = !viewIsGrid.value;
 
-  void setSort(RepoSort s) {
-    sortBy.value = s;
+  void setSort(RepoSort sort) {
+    sortBy.value = sort;
     applyFilters();
   }
 
   void setQuery(String q) {
-    query.value = q;
+    query.value = q.trim();
     applyFilters();
   }
 
@@ -59,7 +68,6 @@ class RepoController extends GetxController {
         list.sort((b, a) => (a.updatedAt ?? DateTime(0)).compareTo(b.updatedAt ?? DateTime(0)));
         break;
     }
-
     filtered.assignAll(list);
   }
 }

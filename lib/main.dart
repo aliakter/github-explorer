@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     final ThemeController themeCtrl = Get.find();
     return Obx(() {
       return GetMaterialApp(
-        title: 'iNiLabs GitHub Explorer',
+        title: 'GitHub Explorer',
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
