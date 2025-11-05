@@ -1,4 +1,4 @@
-# 🧭 iNiLabs GitHub Explorer (Flutter Developer Task)
+# 🧭 GitHub Explorer (Flutter Developer Task)
 
 A Flutter project built following **Clean Architecture** and **GetX pattern**, demonstrating:
 
